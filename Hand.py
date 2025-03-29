@@ -1,7 +1,6 @@
 import turtle
-import time
 import math
-import random
+
 
 class Hand:
     def __init__(self, length, width, color):
@@ -24,5 +23,29 @@ class Hand:
         x = self.length * math.sin(math.radians(self.angle)) + offset_x
         y = self.length * math.cos(math.radians(self.angle)) + offset_y
         turtle_obj.penup()
-        turtle_obj.goto(x, y)
-        turtle_obj.dot(self.width * 3, self.color)
+
+
+
+if __name__ == '__main__':
+    second_hand = Hand(180, 1, "red")
+    minute_hand = Hand(150, 3, "blue")
+    hour_hand = Hand(100, 5, "green")
+
+    pen = turtle.Turtle()
+
+    seconds = 20
+    minutes = 40
+    hours = 2
+
+    second_angle = (90 - seconds * 6) % 360
+    minute_angle = (90 - (minutes + seconds / 60) * 6) % 360
+    hour_angle = (90 - (hours % 12 + minutes / 60 + seconds / 3600) * 30) % 360
+
+    second_hand.set_angle(second_angle)
+    minute_hand.set_angle(minute_angle)
+    hour_hand.set_angle(hour_angle)
+
+    second_hand.draw(pen, 0, 0)
+    minute_hand.draw(pen, 0, 0)
+    hour_hand.draw(pen, 0, 0)
+    turtle.mainloop()
