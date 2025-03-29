@@ -1,6 +1,7 @@
 import turtle
 import math
 
+
 class Digit:
     def __init__(self, value, angle, radius):
         self.value = value
@@ -16,3 +17,11 @@ class Digit:
         turtle_obj.color("white")
         turtle_obj.write(str(self.value), align="center", font=("Comic Sans MS", 18, "bold"))
 
+
+if __name__ == '__main__':
+    screen = turtle.Screen()
+    screen.bgcolor("sky blue")
+    t = turtle.Turtle()
+    digit = Digit(22, 0, 100)
+    digit.draw(t, 0, 0)
+    turtle.mainloop()
