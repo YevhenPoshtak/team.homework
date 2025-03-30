@@ -1,6 +1,7 @@
 import turtle
 import time
 
+
 class Watch:
     def __init__(self):
         self.current_time = None

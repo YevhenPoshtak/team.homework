@@ -17,7 +17,6 @@ class Dial:
             digit = Digit(i, angle, radius + 20)
             self.digits.append(digit)
 
-
     def draw(self, turtle_obj, offset_x=0, offset_y=0):
         turtle_obj.penup()
         turtle_obj.goto(offset_x, offset_y - self.radius)

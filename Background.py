@@ -1,14 +1,14 @@
 import turtle
 import random
 
-turtle.setup(500, 500)
+turtle.setup(700, 700)
 turtle.tracer(0)
 screen = turtle.Screen()
 list_stars = []
 
 for _ in range(20):
-    x = random.randint(-250, 250)
-    y = random.randint(-250, 250)
+    x = random.randint(-350, 350)
+    y = random.randint(-350, 350)
     list_stars.append((x, y))
 
 
@@ -40,5 +40,5 @@ class Background:
 
 if __name__ == '__main__':
     background = Background()
-    background.draw(20)
+    background.draw(11)
     turtle.mainloop()

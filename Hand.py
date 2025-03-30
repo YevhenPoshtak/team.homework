@@ -20,9 +20,8 @@ class Hand:
         turtle_obj.color(self.color)
         turtle_obj.pendown()
         turtle_obj.forward(self.length)
-        x = self.length * math.sin(math.radians(self.angle)) + offset_x
-        y = self.length * math.cos(math.radians(self.angle)) + offset_y
         turtle_obj.penup()
+
 
 
 

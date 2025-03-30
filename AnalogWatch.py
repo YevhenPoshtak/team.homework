@@ -1,7 +1,4 @@
 import turtle
-import time
-import math
-import random
 from Background import Background
 from Dial import Dial
 from Hand import Hand
@@ -12,20 +9,23 @@ class AnalogWatch(Watch):
     def __init__(self, radius):
         super().__init__()
         self.dial = Dial(radius)
-        self.second_hand = Hand(180, 1, "red")
-        self.minute_hand = Hand(150, 3, "blue")
-        self.hour_hand = Hand(100, 5, "green")
+        self.second_hand = Hand(radius * 7/8, 1, "red")
+        self.minute_hand = Hand(radius * 2/3, 3, "blue")
+        self.hour_hand = Hand(radius//2, 5, "green")
         self.pen = turtle.Turtle()
         self.pen.speed(0)
         self.pen.hideturtle()
         self.background = Background()
         self.offset_x = 0
-        self.offset_y = 120
+        self.offset_y = 100
+
 
     def display(self):
         self.pen.clear()
         self.background.draw(self.current_time.tm_hour)
+        self.pen.setheading(0)
         self.dial.draw(self.pen, self.offset_x, self.offset_y)
+
 
         seconds = self.current_time.tm_sec
         minutes = self.current_time.tm_min
@@ -43,9 +43,10 @@ class AnalogWatch(Watch):
         self.minute_hand.draw(self.pen, self.offset_x, self.offset_y)
         self.hour_hand.draw(self.pen, self.offset_x, self.offset_y)
 
-        if seconds == 0:
-            self.pen.penup()
-            self.pen.goto(self.offset_x, self.offset_y)
-            self.pen.color("yellow")
-            self.pen.dot(20)
         turtle.update()
+
+
+if __name__ == '__main__':
+    analog_watch = AnalogWatch(200)
+    analog_watch.start()
+    turtle.mainloop()
