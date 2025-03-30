@@ -1,11 +1,4 @@
 import turtle
-import time
-import math
-import random
-from Background import Background
-from Dial import Dial
-from Hand import Hand
-from Watch import Watch
 from AnalogWatch import AnalogWatch
 from DigitalWatch import DigitalWatch
 
@@ -16,7 +9,7 @@ def toggle_format():
 
 if __name__ == "__main__":
     analog_watch = AnalogWatch(200)
-    digital_watch = DigitalWatch('12h', alarm_time="11:45:40")
+    digital_watch = DigitalWatch('12h', alarm_time="02:13:00")
 
     analog_watch.start()
     digital_watch.start()

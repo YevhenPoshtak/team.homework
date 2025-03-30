@@ -22,7 +22,7 @@ class DigitalWatch(Watch):
             time_str = time.strftime("%I:%M:%S %p", self.current_time)
         else:
             raise ValueError("Invalid format")
-        self.pen.color("black")
+        self.pen.color("white")
         self.pen.write(time_str, align="center", font=("Comic Sans MS", 24, "bold"))
 
         if self.alarm_time and time.strftime("%H:%M:%S", self.current_time) == self.alarm_time:
